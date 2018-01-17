@@ -218,8 +218,10 @@ class PopoverTooltip extends React.PureComponent<Props, State> {
 			transform: [{ scale: this.state.tooltipContainerScale }]
 		}
 
-		const backgroundColor = this.props.backgroundColor
-		const borderStyle = backgroundColor ? { borderTopColor: backgroundColor } : null
+		const { backgroundColor } = this.props
+		const borderStyle = backgroundColor
+			? { borderTopColor: backgroundColor, borderBottomColor: backgroundColor }
+			: null
 		let triangleDown = null
 		let triangleUp = null
 		if (this.state.tooltipTriangleDown) {
