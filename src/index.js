@@ -127,7 +127,7 @@ class PopoverTooltip extends React.PureComponent<Props, State> {
 
 	toggleModal = () => {
 		this.setState({ isModalOpen: !this.state.isModalOpen })
-		if (isModalOpen) this.props.atClosed()
+		if (this.state.isModalOpen) this.props.atClosed()
 	}
 
 	openModal = () => {
